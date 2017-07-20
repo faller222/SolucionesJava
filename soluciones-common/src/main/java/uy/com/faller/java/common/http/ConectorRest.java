@@ -1,4 +1,4 @@
-package uy.com.antel.epagos.common.audit.api.impl.rest;
+package uy.com.faller.java.common.http;
 
 
 import org.apache.http.HttpResponse;
@@ -7,7 +7,6 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
-import uy.com.antel.epagos.common.audit.AuditoriaException;
 
 import java.util.List;
 
@@ -25,13 +24,13 @@ public class ConectorRest {
 
             int codigo = response.getStatusLine().getStatusCode();
             if (codigo != HTTP_OK) {
-                throw new AuditoriaException("ERROR AUDITORIA - Codigo devuelto :" + codigo);
+                throw new RuntimException("ERROR  - Codigo devuelto :" + codigo);
             }
         } catch (Exception e) {
             if (e instanceof AuditoriaException) {
                 throw (AuditoriaException) e;
             }
-            throw new AuditoriaException("ERROR AUDITORIA", e);
+            throw new RuntimException("ERROR ", e);
         } finally {
             post.releaseConnection();
         }

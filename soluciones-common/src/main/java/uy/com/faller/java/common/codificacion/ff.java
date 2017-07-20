@@ -1,4 +1,4 @@
-package uy.com.faller.java.common.http.codificacion;
+package uy.com.faller.java.common.codificacion;
 
 public class ff {
 
