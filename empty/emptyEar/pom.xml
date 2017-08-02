@@ -1,0 +1,39 @@
+<project>
+  <parent>
+    <artifactId>empty</artifactId>
+    <groupId>uy.com.faller.java</groupId>
+    <version>1.0.0-FINAL</version>
+  </parent>
+
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>emptyEar</artifactId>
+  <packaging>pom</packaging>
+  <name>EmptyEar</name>
+
+  <modules>
+    <module>ejb</module>
+    <module>web</module>
+    <module>ear</module>
+  </modules>
+
+  <dependencyManagement>
+    <dependencies>
+
+      <dependency>
+        <groupId>uy.com.faller.java</groupId>
+        <artifactId>emptyEar-web</artifactId>
+        <type>war</type>
+        <version>1.0.0-FINAL</version>
+      </dependency>
+
+      <dependency>
+        <groupId>uy.com.faller.java</groupId>
+        <artifactId>emptyEar-ejb</artifactId>
+        <type>ejb</type>
+        <version>1.0.0-FINAL</version>
+      </dependency>
+
+    </dependencies>
+
+  </dependencyManagement>
+</project>

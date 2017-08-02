@@ -11,8 +11,7 @@
 
   <modules>
     <module>common</module>
-    <module>emptyJar</module>
-    <module>emptyWeb</module>
+    <module>empty</module>
   </modules>
 
   <properties>

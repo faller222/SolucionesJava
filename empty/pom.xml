@@ -1,0 +1,19 @@
+<project>
+  <parent>
+    <artifactId>soluciones-java</artifactId>
+    <groupId>uy.com.faller.java</groupId>
+    <version>1.0.0-FINAL</version>
+  </parent>
+
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>empty</artifactId>
+  <packaging>pom</packaging>
+  <name>empty</name>
+
+  <modules>
+    <module>emptyJar</module>
+    <module>emptyWeb</module>
+    <module>emptyEar</module>
+  </modules>
+
+</project>

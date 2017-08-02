@@ -12,6 +12,5 @@
 **/*.settings
 **/*.classpath
 **/*.aside
-**/*.xml.versionsBackup
+**/pom.xml.versionsBackup
 **/*.log
-.idea/
