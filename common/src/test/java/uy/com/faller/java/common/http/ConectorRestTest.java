@@ -23,4 +23,18 @@ public class ConectorRestTest {
     System.out.println(body);
   }
 
+  @Test
+  public void invocarParam() throws CommonException {
+    String url = "http://date.jsontest.com/";
+    List<BasicNameValuePair> urlParameters = new ArrayList<>();
+    BasicNameValuePair param = new BasicNameValuePair("service","ip");
+    urlParameters.add(param);
+
+
+    HttpResponse response = ConectorRest.invocar(urlParameters, url);
+    String body = ConectorRest.getBody(response);
+
+    System.out.println(body);
+  }
+
 }
