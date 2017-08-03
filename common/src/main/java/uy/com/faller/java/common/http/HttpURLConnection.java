@@ -12,7 +12,7 @@ public class HttpURLConnection {
   private final String USER_AGENT = "Mozilla/5.0";
 
   // HTTP GET request
-  public void sendGet(String url) throws Exception {
+  public HttpResponse sendGet(String url) throws Exception {
 
 
     URL obj = new URL(url);
@@ -25,8 +25,6 @@ public class HttpURLConnection {
     con.setRequestProperty("User-Agent", USER_AGENT);
 
     int responseCode = con.getResponseCode();
-    System.out.println("\nSending 'GET' request to URL : " + url);
-    System.out.println("Response Code : " + responseCode);
 
     BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
     String inputLine;
@@ -37,8 +35,7 @@ public class HttpURLConnection {
     }
     in.close();
 
-    //print result
-    System.out.println(response.toString());
+    return new HttpResponse(url, "", responseCode, response.toString());
 
   }
 
@@ -76,20 +73,14 @@ public class HttpURLConnection {
     wr.close();
 
     int responseCode = con.getResponseCode();
-    //System.out.println("\nSending 'POST' request to URL : " + url);
-    //System.out.println("Post parameters : " + urlParameters);
-    //System.out.println("Response Code : " + responseCode);
 
     BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
     String inputLine;
-    StringBuffer responseStr = new StringBuffer();
+    StringBuilder responseStr = new StringBuilder();
     while ((inputLine = in.readLine()) != null) {
       responseStr.append(inputLine);
     }
     in.close();
-
-    //print result
-    //System.out.println(responseStr.toString());
 
     return new HttpResponse(url, urlParameters.toString(), responseCode, responseStr.toString());
   }
